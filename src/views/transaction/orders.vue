@@ -28,7 +28,7 @@
           <el-input clearable v-model="formInline.merchantName"></el-input>
         </el-form-item>
         <el-form-item label="支付方式：">
-          <el-select clearable v-model="formInline.payType">
+          <el-select clearable v-model="formInline.payTypeId">
             <el-option
               v-for="(item, index) in paytypes"
               :key="index"

@@ -100,12 +100,24 @@
       ></el-table-column>
       <el-table-column fixed="right" label="操作" min-width="150">
         <template slot-scope="scope">
-          <el-button @click="handleClick(scope.row, 3)" type="text" size="small"
+          <div v-if="scope.row.status == '0' || scope.row.status == '2'">
+            <el-button @click="handleClick(scope.row, 3)" type="text" size="small"
             >审核通过</el-button
           >
           <el-button @click="handleClick(scope.row, 2)" type="text" size="small"
             >审核拒绝</el-button
           >
+            </div>
+            <div v-else>
+              <el-button disabled @click="handleClick(scope.row)" type="text" size="small"
+                >审核通过</el-button
+              >
+              
+              <el-button disabled @click="cancel(scope.row)" type="text" size="small"
+                >审核拒绝</el-button
+              >
+              </div>
+         
         </template>
       </el-table-column>
     </el-table>

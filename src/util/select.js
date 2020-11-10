@@ -2,7 +2,8 @@ import {
     paytype,
     paychannel
 } from "@/axios/api";
-export let _status_ = [{
+export let _status_ = [
+    {
         label: "正常",
         value: "1",
     },
@@ -11,7 +12,11 @@ export let _status_ = [{
         value: "0",
     }
 ];
-export let registerStatue = [{
+export let registerStatue = [
+    {
+        label: "全部",
+        value: "",
+    },{
     label: "未签约",
     value: "0",
 }, {
@@ -24,7 +29,11 @@ export let registerStatue = [{
     label: "审核失败",
     value: "3",
 }, ]
-export let toExamineStatus = [{
+export let toExamineStatus = [
+    {
+        label: "全部",
+        value: "",
+    },{
     label: "未签约",
     value: "0",
 }, {
@@ -37,12 +46,12 @@ export let toExamineStatus = [{
     label: "审核失败",
     value: "3",
 }];
-export let paymentStatus = [{
+export let paymentStatus = [
+    { label: "全部",
+        value: "",
+    },{
     label: "审批中",
     value: "0",
-}, {
-    label: "支付完成",
-    value: "1",
 }, {
     label: "审核不通过",
     value: "2",
@@ -50,13 +59,20 @@ export let paymentStatus = [{
     label: "审核通过",
     value: "3",
 }, {
+    label: "支付完成",
+    value: "1",
+}, {
     label: "支付处理中",
     value: "4",
 }, {
     label: "支付处理失败",
     value: "5",
 }];
-export let _paymentStatus = [{
+export let _paymentStatus = [
+    {
+        label: "全部",
+        value: "",
+    },{
     label: "等待处理中",
     value: "0",
 }, {
@@ -66,7 +82,11 @@ export let _paymentStatus = [{
     label: "失败",
     value: "2",
 }];
-export let withdrawalStatus = [{
+export let withdrawalStatus = [
+    {
+        label: "全部",
+        value: "",
+    },{
     label: "待审核",
     value: "1",
 }, {
@@ -82,7 +102,12 @@ export let withdrawalStatus = [{
     label: "审核拒绝",
     value: "5",
 }]
-export let orderStatus = [{
+export let orderStatus = [
+    {
+    
+        label: "全部",
+        value: "",
+    },{
     label: "处理中",
     value: 0,
 }, {
@@ -93,7 +118,11 @@ export let orderStatus = [{
     value: 2,
 }]
 // 0审核不通过，3审核通过，4支付处理中，5支付处理失败
-export let rechargeStatus = [{
+export let rechargeStatus = [
+    {
+        label: "全部",
+        value: "",
+    },{
     label: "审批中",
     value: 0,
 }, {

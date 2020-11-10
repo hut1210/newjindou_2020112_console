@@ -8,7 +8,7 @@ import {
 const http = {}
 axios.defaults.withCredentials = true
 var instance = axios.create({
-    timeout: 60000,
+    timeout: 60000000000,
     baseURL: baseURL.httpUrl,
     headers: {
         "Access-Control-Allow-Origin": "*"
@@ -48,13 +48,37 @@ var instance = axios.create({
 
 // 添加请求拦截器
 instance.interceptors.request.use(function (config) {
+    debugger
     // 在发送请求之前做些什么
     if (config.url == "/gpauth/system/users/login") {
         return config;
     } else {
         config.headers.Authorization = 'Bearer ' + sessionStorage.getItem('token');
+        if (config.method == 'get' ) {
+            if(config.url.indexOf("?") > -1){
+                config.url += '&tp=' + getNowTime();
+                config.url = config.url;
+            }else{
+                config.url += '?&tp=' + getNowTime();
+                config.url = config.url;
+            }
+          } else {
+            //console.log((params));
+            //if(typeof(params)=='string'){
+            try {
+                config.data.tp = getNowTime();
+            } catch (e) {
+                config.data = eval('(' + config.data + ')');
+                config.data.tp = getNowTime();
+                config.data = JSON.stringify(config.data);
+            }
+          }
         return config;
     }
+   
+ 
+      
+    
 }, function (error) {
     // 对请求错误做些什么
     return Promise.reject(error);
@@ -114,5 +138,32 @@ http.post = function (url, data) {
             })
     })
 }
-
+const getNowTime = () => {
+    let date = new Date();
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    let date1 = date.getDate();
+    let hour = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
+    let minute =
+      date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+    let second =
+      date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
+    let milliSeconds = date.getMilliseconds();
+    var currentTime =
+      year +
+      "-" +
+      month +
+      "-" +
+      date1 +
+      " " +
+      hour +
+      ":" +
+      minute +
+      ":" +
+      second +
+      "." +
+      milliSeconds;
+    return currentTime;
+  };
+  
 export default http
