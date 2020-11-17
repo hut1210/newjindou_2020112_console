@@ -104,7 +104,6 @@ export let withdrawalStatus = [
 }]
 export let orderStatus = [
     {
-    
         label: "全部",
         value: "",
     },{
@@ -145,6 +144,7 @@ export let rechargeStatus = [
 let domains = [];
 let paytypes = [];
 paytype().then((res) => {
+    debugger
     if (res.data.code == "1000") {
         let _paytype = res.data.result;
         for (let index = 0; index < _paytype.length; index++) {
@@ -172,7 +172,9 @@ paytype().then((res) => {
 
 let paychannels = [];
 paychannel().then((res) => {
+  
     if (res.data.code == "1000") {
+        
         let _paytype = res.data.result;
         for (let index = 0; index < _paytype.length; index++) {
             paychannels.push({

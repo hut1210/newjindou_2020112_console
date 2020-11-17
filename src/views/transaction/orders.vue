@@ -139,6 +139,11 @@
         min-width="130"
       ></el-table-column>
       <el-table-column
+      prop="paytypeSingleCharge"
+      label="收款单笔费用"
+      min-width="130"
+    ></el-table-column>
+      <el-table-column
         prop="productName"
         label="商品名称"
         min-width="150"
@@ -307,7 +312,6 @@ export default {
     },
     editRow(params){
       this.dialogVisible=true;
-      
       detailOrderList(params.orderId).then((res) => {
         if (res.data.code == "1000") {
           debugger

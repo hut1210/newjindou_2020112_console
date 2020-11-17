@@ -142,7 +142,6 @@ export default {
       this.Listhanlder();
     },
     Listhanlder() {
-      debugger
       examinelist(this.merData).then((res) => {
         if (res.data.code == "1000") {
           this.total = res.data.result.total;

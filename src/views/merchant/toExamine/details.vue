@@ -155,6 +155,7 @@ export default {
       this._merchantpass();
     },
     detail(clientId) {
+      debugger
       examinedetail(clientId).then((res) => {
         if (res.data.code == "1000") {
           this.information = res.data.result;

@@ -32,12 +32,12 @@
     <el-table :data="tableData" border style="width: 100%">
       <el-table-column prop="payoutId" label="付款单号" min-width="150"></el-table-column>
       <el-table-column prop="payeeName" label="收款人姓名" min-width="150"></el-table-column>
-      <el-table-column prop="payeeBankCode" label="收款人银行卡号" min-width="150"></el-table-column>
+      <el-table-column prop="payeeAccount" label="收款人银行卡号" min-width="150"></el-table-column>
       <el-table-column prop="amount" label="付款金额" min-width="150"></el-table-column>
       <!-- <el-table-column prop="address" label="付款备注" min-width="150"></el-table-column> -->
-      <el-table-column prop="status" label="付款状态" min-width="150"></el-table-column>
+      <el-table-column prop="_status" label="付款状态" min-width="150"></el-table-column>
       <el-table-column prop="singleCharge" label="付款服务费" min-width="150"></el-table-column>
-      <el-table-column prop="address" label="付款详情" min-width="150"></el-table-column>
+      <el-table-column prop="message" label="付款详情" min-width="150"></el-table-column>
       <!-- <el-table-column prop="_status" label="资金流水单号" min-width="150"></el-table-column> -->
 
       <el-table-column prop="updateTime" label="更新时间" min-width="150"></el-table-column>

@@ -13,13 +13,13 @@
       >
         <span class="itemTit">{{ domain.name }} :</span>
         <el-form-item :prop="'domains.' + index + '.rate'">
-          <span class="tit">收款费率：</span>
+          <!-- <span class="tit">收款费率：</span>
           <el-input
             :disabled="disabledbo"
             v-model="domain.rate"
             class="itemIn"
           ></el-input
-          >
+          > -->
           <span class="tit">收 款 通 道：</span>
           <el-select
             :disabled="disabledbo"
@@ -33,6 +33,21 @@
               :value="item.value"
             ></el-option>
           </el-select>
+        </el-form-item>
+        <el-form-item prop="withdrawRate">
+          <span class="tit">收款费率：</span>
+          <el-input
+            :disabled="disabledbo"
+            v-model="domain.withdrawRate"
+            class="itemIn"
+          ></el-input
+          >
+          <span class="tit">收款单笔费：</span>
+          <el-input
+            :disabled="disabledbo"
+            v-model="domain.paytypeSingleCharge"
+            class="itemIn"
+          ></el-input>
         </el-form-item>
         <el-form-item prop="withdrawRate">
           <span class="tit">提现费率：</span>
